@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
     private Animator myAnim;
 
     [SerializeField]
-    private float speed;
+    private float speed = 0f;
 
     private Vector2 movement;
 
