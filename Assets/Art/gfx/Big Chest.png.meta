@@ -46,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Big Chest_0: -5973380502916580997
+      Big Chest_1: -4654258178976324817
+      Big Chest_2: -8239380463026148619
+      Big Chest_3: -1206726807726905030
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
