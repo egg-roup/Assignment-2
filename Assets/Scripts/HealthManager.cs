@@ -1,9 +1,12 @@
 using UnityEngine;
+using System;
+using System.Collections;
 
 public class HealthManager : MonoBehaviour
 {
     public int currentHealth;
     public int maxHealth;
+    public static event Action OnPlayerDied;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,7 +26,7 @@ public class HealthManager : MonoBehaviour
         if (currentHealth <= 0)
         {
             gameObject.SetActive(false);
-            
+            OnPlayerDied.Invoke();
         }
     }
 
