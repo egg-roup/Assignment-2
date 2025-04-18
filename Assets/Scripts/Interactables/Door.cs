@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class Door : InteractableBase, IInteractable
 {
-    public GameObject gateWallObject; // Assign your combined wall+gate object here
+    public GameObject gateWallObject;
+    public bool hasKey = false;
 
-    public bool hasKey = false; // Starts false by default
+    public string lockedMessage = "The door is locked. You need a key.";
+    public string unlockedMessage = "The gate opens!";
 
     public void Interact()
     {
@@ -13,14 +15,14 @@ public class Door : InteractableBase, IInteractable
 
         if (!hasKey)
         {
-            Debug.Log("The door is locked. You need a key.");
+            DialogueManager.Instance.ShowMessage(lockedMessage, 2f);
             return;
         }
 
         if (gateWallObject != null)
             gateWallObject.SetActive(false);
 
-        Debug.Log("The gate opens!");
+        DialogueManager.Instance.ShowMessage(unlockedMessage, 2f);
         hasInteracted = true;
     }
 }

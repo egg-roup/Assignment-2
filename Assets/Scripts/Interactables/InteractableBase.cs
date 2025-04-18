@@ -7,7 +7,7 @@ public class InteractableBase : MonoBehaviour
     public Transform player;
     public GameObject interactionCuePrefab;
 
-    private GameObject cueInstance;
+    protected GameObject cueInstance;
     protected bool hasInteracted = false;
 
     protected virtual void Update()

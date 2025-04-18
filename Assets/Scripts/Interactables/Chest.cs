@@ -3,6 +3,10 @@ using UnityEngine;
 public class Chest : InteractableBase, IInteractable
 {
     public Sprite openedSprite;
+
+    [TextArea]
+    public string rewardMessage = "You got a key!";
+
     private SpriteRenderer sr;
 
     private void Start()
@@ -15,7 +19,9 @@ public class Chest : InteractableBase, IInteractable
         if (hasInteracted) return;
 
         sr.sprite = openedSprite;
-        Debug.Log("Player received an item! (Placeholder)");
+
+        DialogueManager.Instance.ShowMessage(rewardMessage, 2f);
+
         hasInteracted = true;
     }
 }
