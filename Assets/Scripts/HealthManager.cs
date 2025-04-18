@@ -17,8 +17,13 @@ public class HealthManager : MonoBehaviour
         
     }
 
-    void HurtPlayer(int damageToGive)
+    public void HurtPlayer(int damageToGive)
     {
         currentHealth -= damageToGive;
+        if (currentHealth <= 0)
+        {
+            gameObject.SetActive(false);
+            
+        }
     }
 }
