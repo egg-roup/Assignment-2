@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+
 
 public class SpecialNPC : NPC
 {
@@ -22,7 +24,18 @@ public class SpecialNPC : NPC
     private void EndGameSequence()
     {
         Debug.Log("Ending the game...");
-        // TODO: Load a new scene, fade out, etc.
-        // Example: SceneManager.LoadScene("CreditsScene");
+        StartCoroutine(DelayedEnd());
+
+
+    }
+    private IEnumerator DelayedEnd()
+    {
+        yield return new WaitForSeconds(4f);
+
+    #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+    #else
+        Application.Quit();
+    #endif
     }
 }
