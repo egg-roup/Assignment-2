@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 movement;
 
+    public InventoryManager inventory;
+
     void Start()
     {
         myRB = GetComponent<Rigidbody2D>();
@@ -52,10 +54,23 @@ public class PlayerController : MonoBehaviour
         // Start attack
         if (!isAttacking && Input.GetKeyDown(KeyCode.Mouse0))
         {
-            attackCounter = attackTime;
-            myAnim.SetBool("isAttacking", true);
-            isAttacking = true;
-            myRB.linearVelocity = Vector2.zero; // Stop immediately when attack starts
+            ToolClass tool = inventory.selectedItem?.GetTool();
+
+            if (tool != null && tool.toolType == ToolClass.ToolType.sword)
+            {
+                attackCounter = attackTime;
+                myAnim.SetBool("isAttacking", true);
+                isAttacking = true;
+                myRB.linearVelocity = Vector2.zero; // Stop immediately when attack starts
+            }
+            else
+            {
+                ConsumableClass consumable = inventory.selectedItem?.GetConsumable();
+                if (consumable != null)
+                {
+                    consumable.Use(this);
+                }
+            }
         }
     }
 
@@ -73,3 +88,4 @@ public class PlayerController : MonoBehaviour
     }
 
 }
+

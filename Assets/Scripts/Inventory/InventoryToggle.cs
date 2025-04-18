@@ -8,7 +8,7 @@ public class InventoryToggle : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.Mouse2))
         {
             isInventoryOpen = !isInventoryOpen;
             inventoryPanel.SetActive(isInventoryOpen);

@@ -8,11 +8,9 @@ public class ToolClass : ItemClass
     
     public enum ToolType
     {
-        weapon
+        sword
     }
 
-    public override ItemClass GetItem() { return this; }
     public override ToolClass GetTool() { return this; }
-    public override MiscClass GetMisc() { return null; }
-    public override ConsumableClass GetConsumable() { return null; }
+
 }

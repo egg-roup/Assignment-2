@@ -15290,6 +15290,7 @@ GameObject:
   - component: {fileID: 114848936}
   - component: {fileID: 114848942}
   - component: {fileID: 114848943}
+  - component: {fileID: 114848944}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -15396,6 +15397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  inventory: {fileID: 1857124627}
 --- !u!212 &114848940
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15498,6 +15500,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 100
   maxHealth: 100
+--- !u!114 &114848944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114848935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c04097520e5fc4a87a83780178369c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryPanel: {fileID: 1695692821}
 --- !u!1 &170363039
 GameObject:
   m_ObjectHideFlags: 0
@@ -17001,6 +17016,9 @@ MonoBehaviour:
   interactionCuePrefab: {fileID: 1737911525}
   openedSprite: {fileID: -4654258178976324817, guid: 149fd2ad1df7e1647a959ae8ca05ad79, type: 3}
   rewardMessage: You got a Key!
+  loot:
+  - item: {fileID: 11400000, guid: 6465fd5d3fe43b44cb56b083ea90ec5d, type: 2}
+    quantity: 1
 --- !u!61 &453912132
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -37621,6 +37639,9 @@ MonoBehaviour:
   interactionCuePrefab: {fileID: 1737911525}
   openedSprite: {fileID: -4654258178976324817, guid: 149fd2ad1df7e1647a959ae8ca05ad79, type: 3}
   rewardMessage: You got a Potion!
+  loot:
+  - item: {fileID: 11400000, guid: 6a37bad65acdd0a48b66f14d2c148daa, type: 2}
+    quantity: 5
 --- !u!61 &1344005345
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -37899,7 +37920,7 @@ MonoBehaviour:
     Those skeletons took it!
   npcID: quest_npc
   completionDialogue: You have it. Thank you! I can finally finish my work!
-  playerHasSpecialItem: 0
+  houseKeyItem: {fileID: 11400000, guid: 9fdf5866091f7bb40a1a2fcd25459de3, type: 2}
 --- !u!1 &1408938604
 GameObject:
   m_ObjectHideFlags: 0
@@ -38028,9 +38049,10 @@ MonoBehaviour:
   player: {fileID: 114848941}
   interactionCuePrefab: {fileID: 1267801571}
   gateWallObject: {fileID: 1486957773}
-  hasKey: 1
   lockedMessage: The door is locked. You need a key.
   unlockedMessage: The gate opens!
+  requiredKey: {fileID: 11400000, guid: 6465fd5d3fe43b44cb56b083ea90ec5d, type: 2}
+  consumeKeyOnUse: 1
 --- !u!61 &1486957776
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38444,6 +38466,9 @@ MonoBehaviour:
   interactionCuePrefab: {fileID: 1737911525}
   openedSprite: {fileID: -4654258178976324817, guid: 149fd2ad1df7e1647a959ae8ca05ad79, type: 3}
   rewardMessage: You got... someone's House key?
+  loot:
+  - item: {fileID: 11400000, guid: 9fdf5866091f7bb40a1a2fcd25459de3, type: 2}
+    quantity: 1
 --- !u!61 &1575524656
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38985,7 +39010,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1857124626}
   - {fileID: 2134316410}
   - {fileID: 732286640}
   m_Father: {fileID: 452548562}
@@ -146933,16 +146957,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1857124625}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.97933334, y: 0.97933334, z: 0.97933334}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1695692822}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 750, y: 369.63922}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1857124627
@@ -146962,9 +146986,7 @@ MonoBehaviour:
   hotbarSlotHolder: {fileID: 547871036}
   itemToAdd: {fileID: 0}
   itemToRemove: {fileID: 0}
-  startingItems:
-  - item: {fileID: 11400000, guid: 91641732bf5292340b25e634588a2fa9, type: 2}
-    quantity: 1
+  startingItems: []
   hotbarSelector: {fileID: 309779003}
   selectedSlotIndex: 0
   selectedItem: {fileID: 0}
@@ -148569,12 +148591,32 @@ PrefabInstance:
       objectReference: {fileID: 114848941}
     - target: {fileID: 2781901103003248302, guid: c7053e1b1d088bb4089ac9b833f388a0, type: 3}
       propertyPath: rewardMessage
-      value: You got weapon.
+      value: You got weapon. Click middle mouse button to open inventory.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781901103003248302, guid: c7053e1b1d088bb4089ac9b833f388a0, type: 3}
+      propertyPath: loot.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2781901103003248302, guid: c7053e1b1d088bb4089ac9b833f388a0, type: 3}
       propertyPath: interactionCuePrefab
       value: 
       objectReference: {fileID: 1737911525}
+    - target: {fileID: 2781901103003248302, guid: c7053e1b1d088bb4089ac9b833f388a0, type: 3}
+      propertyPath: loot.Array.data[0].item
+      value: 
+      objectReference: {fileID: 11400000, guid: 91641732bf5292340b25e634588a2fa9, type: 2}
+    - target: {fileID: 2781901103003248302, guid: c7053e1b1d088bb4089ac9b833f388a0, type: 3}
+      propertyPath: loot.Array.data[1].item
+      value: 
+      objectReference: {fileID: 11400000, guid: 6a37bad65acdd0a48b66f14d2c148daa, type: 2}
+    - target: {fileID: 2781901103003248302, guid: c7053e1b1d088bb4089ac9b833f388a0, type: 3}
+      propertyPath: loot.Array.data[0].quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781901103003248302, guid: c7053e1b1d088bb4089ac9b833f388a0, type: 3}
+      propertyPath: loot.Array.data[1].quantity
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8543798123291796986, guid: c7053e1b1d088bb4089ac9b833f388a0, type: 3}
       propertyPath: m_Name
       value: Weapon Chest
@@ -148597,6 +148639,7 @@ SceneRoots:
   - {fileID: 961052747}
   - {fileID: 297408069}
   - {fileID: 1486957774}
+  - {fileID: 1857124626}
   - {fileID: 452548562}
   - {fileID: 1640621512}
   - {fileID: 1318059274}
