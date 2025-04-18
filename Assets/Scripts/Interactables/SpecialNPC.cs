@@ -6,11 +6,11 @@ public class SpecialNPC : NPC
 {
     public string completionDialogue = "You have it. Thank you! I can finally finish my work!";
 
-    public bool playerHasSpecialItem = false;
+    public ItemClass houseKeyItem;
 
     public override void Interact()
     {
-        if (playerHasSpecialItem)
+        if (InventoryManager.Instance.selectedItem != null && InventoryManager.Instance.selectedItem.itemName == houseKeyItem.itemName)
         {
             DialogueManager.Instance.ShowMessage(completionDialogue, 4f, npcID, 100);
             EndGameSequence();

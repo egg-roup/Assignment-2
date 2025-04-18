@@ -54,8 +54,9 @@ public class PlayerController : MonoBehaviour
         // Start attack
         if (!isAttacking && Input.GetKeyDown(KeyCode.Mouse0))
         {
-            ToolClass tool = inventory.selectedItem?.GetTool();
 
+            ToolClass tool = inventory.selectedItem?.GetTool();
+            
             if (tool != null && tool.toolType == ToolClass.ToolType.sword)
             {
                 attackCounter = attackTime;
@@ -68,12 +69,11 @@ public class PlayerController : MonoBehaviour
                 ConsumableClass consumable = inventory.selectedItem?.GetConsumable();
                 if (consumable != null)
                 {
-                    consumable.Use(this);
+                    consumable.Use(this); // Heal the player
                 }
             }
-        }
     }
-
+    }
 
     void FixedUpdate()
     {
@@ -88,4 +88,3 @@ public class PlayerController : MonoBehaviour
     }
 
 }
-

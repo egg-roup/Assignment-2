@@ -17017,7 +17017,7 @@ MonoBehaviour:
   openedSprite: {fileID: -4654258178976324817, guid: 149fd2ad1df7e1647a959ae8ca05ad79, type: 3}
   rewardMessage: You got a Key!
   loot:
-  - item: {fileID: 11400000, guid: 6465fd5d3fe43b44cb56b083ea90ec5d, type: 2}
+  - item: {fileID: 11400000, guid: 9fdf5866091f7bb40a1a2fcd25459de3, type: 2}
     quantity: 1
 --- !u!61 &453912132
 BoxCollider2D:
@@ -37920,7 +37920,7 @@ MonoBehaviour:
     Those skeletons took it!
   npcID: quest_npc
   completionDialogue: You have it. Thank you! I can finally finish my work!
-  houseKeyItem: {fileID: 11400000, guid: 9fdf5866091f7bb40a1a2fcd25459de3, type: 2}
+  houseKeyItem: {fileID: 11400000, guid: 4060cece6c8b0ad47afe23022a8e3d5a, type: 2}
 --- !u!1 &1408938604
 GameObject:
   m_ObjectHideFlags: 0
@@ -38049,9 +38049,10 @@ MonoBehaviour:
   player: {fileID: 114848941}
   interactionCuePrefab: {fileID: 1267801571}
   gateWallObject: {fileID: 1486957773}
+  hasKey: 1
   lockedMessage: The door is locked. You need a key.
   unlockedMessage: The gate opens!
-  requiredKey: {fileID: 11400000, guid: 6465fd5d3fe43b44cb56b083ea90ec5d, type: 2}
+  requiredKey: {fileID: 11400000, guid: 9fdf5866091f7bb40a1a2fcd25459de3, type: 2}
   consumeKeyOnUse: 1
 --- !u!61 &1486957776
 BoxCollider2D:
@@ -38467,7 +38468,7 @@ MonoBehaviour:
   openedSprite: {fileID: -4654258178976324817, guid: 149fd2ad1df7e1647a959ae8ca05ad79, type: 3}
   rewardMessage: You got... someone's House key?
   loot:
-  - item: {fileID: 11400000, guid: 9fdf5866091f7bb40a1a2fcd25459de3, type: 2}
+  - item: {fileID: 11400000, guid: 4060cece6c8b0ad47afe23022a8e3d5a, type: 2}
     quantity: 1
 --- !u!61 &1575524656
 BoxCollider2D:
@@ -146966,7 +146967,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 750, y: 369.63922}
+  m_AnchoredPosition: {x: 750, y: 369.12866}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1857124627
@@ -148595,7 +148596,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2781901103003248302, guid: c7053e1b1d088bb4089ac9b833f388a0, type: 3}
       propertyPath: loot.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2781901103003248302, guid: c7053e1b1d088bb4089ac9b833f388a0, type: 3}
       propertyPath: interactionCuePrefab
@@ -148608,14 +148609,14 @@ PrefabInstance:
     - target: {fileID: 2781901103003248302, guid: c7053e1b1d088bb4089ac9b833f388a0, type: 3}
       propertyPath: loot.Array.data[1].item
       value: 
-      objectReference: {fileID: 11400000, guid: 6a37bad65acdd0a48b66f14d2c148daa, type: 2}
+      objectReference: {fileID: 11400000, guid: 4060cece6c8b0ad47afe23022a8e3d5a, type: 2}
     - target: {fileID: 2781901103003248302, guid: c7053e1b1d088bb4089ac9b833f388a0, type: 3}
       propertyPath: loot.Array.data[0].quantity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2781901103003248302, guid: c7053e1b1d088bb4089ac9b833f388a0, type: 3}
       propertyPath: loot.Array.data[1].quantity
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8543798123291796986, guid: c7053e1b1d088bb4089ac9b833f388a0, type: 3}
       propertyPath: m_Name

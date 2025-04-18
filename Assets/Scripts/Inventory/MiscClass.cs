@@ -4,6 +4,6 @@ using UnityEngine;
 public class MiscClass : ItemClass
 {
     // data specific to misc class
-    public override MiscClass GetMisc() { return this; }
 
+    public override MiscClass GetMisc() { return this; }
 }
