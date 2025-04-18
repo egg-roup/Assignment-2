@@ -17,7 +17,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         myAnim = GetComponent<Animator>();
-        target = FindObjectOfType<PlayerController>().transform;
+        target = FindFirstObjectByType<PlayerController>().transform;
     }
 
 
