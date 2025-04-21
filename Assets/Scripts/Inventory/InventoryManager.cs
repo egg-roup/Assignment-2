@@ -147,7 +147,11 @@ public class InventoryManager : MonoBehaviour
     {
        // items.Add(item);
         // check if inventory contains item
-
+        if (item == null)
+        {
+            Debug.LogWarning("Add() was called with a null item!");
+            return false;
+        }
         SlotClass slot = Contains(item);
         if (slot != null && slot.GetItem().isStackable)
             slot.AddQuantity(quantity);
